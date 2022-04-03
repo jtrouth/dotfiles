@@ -77,8 +77,19 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(kubectl git)
-
+plugins=(git)
+# Enable the Kubernetes plugin if kubectl is installed
+if [ -f "$(which kubectl)" ]; then
+  plugins+=(kubectl)
+fi
+# Distro-specific plugins
+if [ -f "$(which pacman)" ]; then
+  plugins+=(archlinux)
+elif [ -f "$(which apt)" ]; then
+  plugins+=(debian)
+elif [ -f "$(which yum)" ]; then
+  plugins+=(yum)
+fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -125,7 +136,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Kubectl completion
-if [ -f $(which kubectl) ]; then
+if [ -f "$(which kubectl)" ]; then
   source <(kubectl completion zsh)
   alias k=kubectl
   compdef __start_kubectl k
