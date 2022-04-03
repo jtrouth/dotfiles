@@ -106,8 +106,6 @@ export EDITOR="code -w"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-PATH=$PATH:~/go/bin:${KREW_ROOT:-$HOME/.krew}/bin
-
 # GPG
 export GPG_TTY=$TTY
 if [ -f "${HOME}/.gpg-agent-info" ]; then
