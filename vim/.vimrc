@@ -17,13 +17,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,7 +71,7 @@ let g:vim_markdown_folding_disabled = 1
 " Visuals
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme molokai
 let g:airline_solarized_dark_text = 1
 let g:airline_solarized_enable_command_color = 1
 let g:airline_solarized_dark_inactive_border = 1

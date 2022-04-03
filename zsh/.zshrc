@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jtrouth/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -125,10 +125,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Kubectl completion
-alias k=kubectl
-source <(kubectl completion zsh)
-compdef __start_kubectl k
-# Kubectl aliases via https://github.com/dwertent/alias-kubectl
-if [ -f "${HOME}/.local/share/alias-kubectl/kubectl_aliases" ]; then
-  source ${HOME}/.local/share/alias-kubectl/kubectl_aliases
+if [ -f $(which kubectl) ]; then
+  source <(kubectl completion zsh)
+  alias k=kubectl
+  compdef __start_kubectl k
+
+  # Kubectl aliases via https://github.com/dwertent/alias-kubectl
+  if [ -f "${HOME}/.local/share/alias-kubectl/kubectl_aliases" ]; then
+    source ${HOME}/.local/share/alias-kubectl/kubectl_aliases
+  fi
 fi
