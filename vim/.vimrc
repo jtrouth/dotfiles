@@ -1,3 +1,7 @@
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=2
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -18,6 +22,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,6 +64,10 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
+" Other plugin settings
+let g:vim_markdown_folding_disabled = 1
+
+" Visuals
 syntax enable
 set background=dark
 colorscheme solarized
