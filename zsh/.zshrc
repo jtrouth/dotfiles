@@ -77,7 +77,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git aliases)
+# GCloud plugin
+if [ -f "$(which kubectl)" ]; then
+ plugins+=(gcloud)
+fi
 # Enable the Kubernetes plugin if kubectl is installed
 if [ -f "$(which kubectl)" ]; then
   plugins+=(kubectl)
