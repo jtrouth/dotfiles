@@ -29,9 +29,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git aliases common-aliases emoji encode64 extract git-auto-fetch)
+plugins=(git aliases colored-man-pages colorize command-not-found common-aliases emoji encode64 extract git-auto-fetch sudo zsh-interactive-cd zsh-navigation-tools)
 
-CMD_PLUGINS=(docker docker-compose gcloud kubectl helm minikube)
+CMD_PLUGINS=(docker docker-compose gcloud kubectl helm minikube node npm nvm perl pip python terraform yarn)
 for i in "${CMD_PLUGINS[@]}"; do
   if [ -f "$(which $i)" ]; then
     plugins+=($i)
@@ -68,6 +68,8 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # GPG
 export GPG_TTY=$TTY

@@ -1,3 +1,4 @@
+set number
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -21,11 +22,14 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tomasr/molokai'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
