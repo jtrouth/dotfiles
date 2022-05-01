@@ -3,6 +3,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
+set mouse=a
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
