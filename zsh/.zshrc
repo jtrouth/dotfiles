@@ -29,7 +29,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git aliases colored-man-pages colorize command-not-found common-aliases emoji encode64 extract git-auto-fetch sudo zsh-interactive-cd zsh-navigation-tools)
+plugins=(git aliases colored-man-pages colorize command-not-found common-aliases copybuffer copyfile dirhistory emoji encode64 extract git-auto-fetch history kubectx thefuck web-search zsh-autosuggestions zsh-interactive-cd zsh-navigation-tools)
 
 CMD_PLUGINS=(docker docker-compose gcloud kubectl helm minikube node npm nvm perl pip python terraform yarn)
 for i in "${CMD_PLUGINS[@]}"; do
