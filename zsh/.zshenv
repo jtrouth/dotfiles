@@ -9,3 +9,7 @@ fi
 if [ -d "${KREW_ROOT:-$HOME/.krew}/bin" ]; then
   PATH=$PATH:${KREW_ROOT:-$HOME/.krew}/bin
 fi
+
+if [ -d "${HOME}/.local/bin" ]; then
+  PATH+=":${HOME}/.local/bin"
+fi

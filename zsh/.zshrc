@@ -96,3 +96,5 @@ if [ -f "$(which kubectl)" ]; then
     source ${HOME}/.local/share/alias-kubectl/kubectl_aliases
   fi
 fi
+
+eval $(thefuck --alias)
